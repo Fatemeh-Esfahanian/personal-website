@@ -62,16 +62,25 @@ export default function AboutSection() {
             </div>
             
             <div className="mt-10">
-              <h3 className="text-xl font-serif font-bold text-slate-900 mb-6">Core Competencies</h3>
-              <div className="flex flex-wrap gap-3">
-                {resumeData.skills.map((skill, index) => (
-                  <span 
-                    key={index} 
-                    className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-slate-100 text-slate-700 border border-slate-200"
-                  >
-                    {skill}
-                  </span>
-                ))}
+              <h3 className="text-xl font-serif font-bold text-slate-900 mb-6">Core Competencies & Skills</h3>
+              <div className="flex flex-col gap-3">
+                {resumeData.skills.map((skill, index) => {
+                  const parts = skill.split(':');
+                  return (
+                    <span 
+                      key={index} 
+                      className="px-5 py-3 rounded-xl text-sm font-medium bg-slate-100 text-slate-700 border border-slate-200 text-left leading-relaxed"
+                    >
+                      {parts.length > 1 ? (
+                        <>
+                          <strong className="text-slate-900">{parts[0]}:</strong> {parts.slice(1).join(':')}
+                        </>
+                      ) : (
+                        skill
+                      )}
+                    </span>
+                  );
+                })}
               </div>
             </div>
           </motion.div>
