@@ -1,0 +1,103 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { resumeData } from "../data/resume";
+import { GraduationCap, Award } from "lucide-react";
+
+export default function EducationSection() {
+  const { education, certifications } = resumeData;
+
+  return (
+    <section id="education" className="py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-sm font-semibold tracking-wide text-teal-600 uppercase"
+          >
+            Academic
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mt-2 text-3xl leading-8 font-serif font-bold tracking-tight text-slate-900 sm:text-4xl"
+          >
+            Education & Certifications
+          </motion.p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          {/* Education Column */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="p-2 bg-teal-50 rounded-lg">
+                <GraduationCap className="h-6 w-6 text-teal-600" />
+              </div>
+              <h3 className="text-2xl font-serif font-bold text-slate-900">Education</h3>
+            </div>
+            
+            <div className="space-y-8">
+              {education.map((item, index) => (
+                <motion.div 
+                  key={item.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-teal-100 transition-colors"
+                >
+                  <div className="flex justify-between items-start mb-2">
+                    <h4 className="text-lg font-bold text-slate-900">{item.degree}</h4>
+                    <span className="text-sm font-medium text-slate-500 bg-white px-2 py-1 rounded shadow-sm">
+                      {item.duration}
+                    </span>
+                  </div>
+                  <p className="text-teal-700 font-medium mb-3">{item.institution}</p>
+                  <p className="text-slate-600 text-sm font-light">{item.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Certifications Column */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="p-2 bg-amber-50 rounded-lg">
+                <Award className="h-6 w-6 text-amber-600" />
+              </div>
+              <h3 className="text-2xl font-serif font-bold text-slate-900">Certifications</h3>
+            </div>
+            
+            <div className="space-y-6">
+              {certifications.map((cert, index) => (
+                <motion.div 
+                  key={cert.id}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="flex items-start gap-4 p-5 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="w-2 h-2 rounded-full bg-amber-400"></div>
+                  </div>
+                  <div>
+                    <h4 className="text-base font-bold text-slate-900">{cert.name}</h4>
+                    <p className="text-slate-500 text-sm mt-1">
+                      {cert.issuer} &bull; <span className="text-slate-400">{cert.year}</span>
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
