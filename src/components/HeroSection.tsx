@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { resumeData } from "../data/resume";
 import { ArrowDown, FileText } from "lucide-react";
+import Image from "next/image";
 
 export default function HeroSection() {
   const { name, title, tagline } = resumeData.personalInfo;
@@ -59,12 +60,13 @@ export default function HeroSection() {
           >
             <div className="relative w-72 h-72 md:w-96 md:h-96">
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-200 to-teal-100 rounded-full shadow-2xl overflow-hidden ring-4 ring-white">
-                {/* Placeholder for Headshot */}
-                <div className="w-full h-full flex items-center justify-center bg-slate-200 text-slate-400">
-                  <svg className="w-32 h-32" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                </div>
+                <Image
+                  src="/profile.jpg"
+                  alt={`${name} Profile`}
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
             </div>
           </motion.div>
