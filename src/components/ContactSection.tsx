@@ -8,9 +8,9 @@ export default function ContactSection() {
   const { email, linkedin, clinicLocation, bookingLink } = resumeData.personalInfo;
 
   return (
-    <section id="contact" className="py-24 bg-white">
+    <section id="contact" className="py-24 bg-white dark:bg-slate-950 transition-colors duration-300">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-900 rounded-3xl overflow-hidden shadow-2xl">
+        <div className="bg-slate-900 dark:bg-slate-900/80 rounded-3xl overflow-hidden shadow-2xl border border-transparent dark:border-white/10 transition-colors">
           <div className="grid grid-cols-1 md:grid-cols-2">
             
             <div className="p-10 md:p-16 flex flex-col justify-between">
@@ -82,9 +82,9 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="bg-blue-600 p-10 md:p-16 flex flex-col justify-center items-center text-center relative overflow-hidden">
+            <div className="bg-blue-600 dark:bg-blue-600/80 p-10 md:p-16 flex flex-col justify-center items-center text-center relative overflow-hidden backdrop-blur-md">
               {/* Decorative background circle */}
-              <div className="absolute top-0 right-0 -mt-16 -mr-16 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-2xl opacity-50"></div>
+              <div className="absolute top-0 right-0 -mt-16 -mr-16 w-64 h-64 bg-blue-500 dark:bg-blue-400 rounded-full mix-blend-multiply filter blur-2xl opacity-50 dark:opacity-30"></div>
               
               <div className="relative z-10">
                 <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-white/20">
@@ -98,7 +98,7 @@ export default function ContactSection() {
                 </p>
                 <a 
                   href={bookingLink}
-                  className="inline-block px-8 py-4 bg-white text-blue-700 font-bold rounded-lg shadow-lg hover:bg-slate-50 hover:scale-105 transition-all duration-300"
+                  className="inline-block px-8 py-4 bg-white dark:bg-slate-900 text-blue-700 dark:text-blue-400 font-bold rounded-lg shadow-lg hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-105 transition-all duration-300"
                 >
                   Book Appointment
                 </a>

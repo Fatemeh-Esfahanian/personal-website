@@ -11,16 +11,9 @@ export const resumeData = {
   },
   experience: [
     {
-      id: 1,
-      role: "Global Burden of Disease Collaborator",
-      institution: "Institute for Health Metrics and Evaluation, University of Washington, USA (Remote)",
-      duration: "Sep. 2024 - Present",
-      description: "Collaborating on global health metrics and disease burden research."
-    },
-    {
       id: 2,
       role: "General Physician",
-      institution: "SHarif Clinic, Fakouri St., Tehran, Iran",
+      institution: "Sharif Clinic, Fakouri St., Tehran, Iran",
       duration: "Aug. 2025 - Present",
       description: "Diagnosing and treating patients, administering vaccinations, and managing health control."
     },
