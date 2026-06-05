@@ -29,7 +29,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8 rtl:space-x-reverse">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -50,7 +50,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4 rtl:space-x-reverse">
+          <div className="md:hidden flex items-center gap-4">
             <LanguageToggle />
             <ThemeToggle />
             <button
