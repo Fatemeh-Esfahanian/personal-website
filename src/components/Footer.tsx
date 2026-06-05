@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer className="bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-white/5 py-12 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-        <div className="text-center md:text-left">
+        <div className="text-center md:text-start">
           <span className="font-serif text-xl font-bold text-slate-900 dark:text-white transition-colors">
             {name}, {title}
           </span>

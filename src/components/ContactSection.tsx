@@ -85,7 +85,7 @@ export default function ContactSection() {
 
             <div className="bg-blue-600 dark:bg-blue-600/80 p-10 md:p-16 flex flex-col justify-center items-center text-center relative overflow-hidden backdrop-blur-md">
               {/* Decorative background circle */}
-              <div className="absolute top-0 right-0 -mt-16 -mr-16 w-64 h-64 bg-blue-500 dark:bg-blue-400 rounded-full mix-blend-multiply filter blur-2xl opacity-50 dark:opacity-30"></div>
+              <div className="absolute top-0 end-0 -mt-16 -me-16 w-64 h-64 bg-blue-500 dark:bg-blue-400 rounded-full mix-blend-multiply filter blur-2xl opacity-50 dark:opacity-30"></div>
               
               <div className="relative z-10">
                 <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-white/20">

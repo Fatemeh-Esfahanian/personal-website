@@ -34,7 +34,7 @@ export default function ExperienceSection() {
 
         <div className="relative">
           {/* Timeline connecting line */}
-          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-slate-200 dark:bg-white/10 transition-colors" aria-hidden="true"></div>
+          <div className="absolute start-4 md:start-8 top-0 bottom-0 w-0.5 bg-slate-200 dark:bg-white/10 transition-colors" aria-hidden="true"></div>
 
           <div className="space-y-12">
             {experience.map((job, index) => (
@@ -44,10 +44,10 @@ export default function ExperienceSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative pl-12 md:pl-20"
+                className="relative ps-12 md:ps-20"
               >
                 {/* Timeline dot */}
-                <div className="absolute left-0 md:left-4 top-1.5 w-8 h-8 bg-blue-100 dark:bg-blue-900/50 rounded-full border-4 border-white dark:border-slate-950 shadow-sm flex items-center justify-center transition-colors">
+                <div className="absolute start-0 md:start-4 top-1.5 w-8 h-8 bg-blue-100 dark:bg-blue-900/50 rounded-full border-4 border-white dark:border-slate-950 shadow-sm flex items-center justify-center transition-colors">
                   <Briefcase className="w-4 h-4 text-blue-700 dark:text-blue-400" />
                 </div>
 

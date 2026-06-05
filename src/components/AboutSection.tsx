@@ -71,7 +71,7 @@ export default function AboutSection() {
                   return (
                     <span 
                       key={index} 
-                      className="px-5 py-3 rounded-xl text-sm font-medium bg-slate-50 dark:bg-slate-900/60 backdrop-blur-md text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 text-left leading-relaxed shadow-sm dark:shadow-lg hover:border-slate-300 dark:hover:border-white/30 transition-colors"
+                      className="px-5 py-3 rounded-xl text-sm font-medium bg-slate-50 dark:bg-slate-900/60 backdrop-blur-md text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 text-start leading-relaxed shadow-sm dark:shadow-lg hover:border-slate-300 dark:hover:border-white/30 transition-colors"
                     >
                       {parts.length > 1 ? (
                         <>
