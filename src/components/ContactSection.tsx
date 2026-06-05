@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { resumeData } from "../data/resume";
 import { Mail, MapPin, Globe, CalendarClock } from "lucide-react";
+import { useLanguage } from "./LanguageProvider";
 
 export default function ContactSection() {
-  const { email, linkedin, clinicLocation, bookingLink } = resumeData.personalInfo;
+  const { data, t } = useLanguage();
+  const { email, linkedin, clinicLocation, bookingLink } = data.personalInfo;
 
   return (
     <section id="contact" className="py-24 bg-white dark:bg-slate-950 transition-colors duration-300">
@@ -21,7 +22,7 @@ export default function ContactSection() {
                   viewport={{ once: true }}
                   className="text-3xl font-serif font-bold text-white mb-4"
                 >
-                  Get in Touch
+                  {t('getInTouch')}
                 </motion.h2>
                 <motion.p 
                   initial={{ opacity: 0, y: 20 }}
@@ -30,7 +31,7 @@ export default function ContactSection() {
                   transition={{ delay: 0.1 }}
                   className="text-slate-400 font-light mb-10 max-w-sm"
                 >
-                  Whether you have a medical inquiry or want to schedule an appointment, my team and I are here to help.
+                  {t('contactText')}
                 </motion.p>
 
                 <div className="space-y-6">
@@ -60,7 +61,7 @@ export default function ContactSection() {
                       <Globe className="w-5 h-5" />
                     </div>
                     <a href={linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                      LinkedIn Profile
+                      {t('linkedinProfile')}
                     </a>
                   </motion.div>
 
@@ -84,23 +85,23 @@ export default function ContactSection() {
 
             <div className="bg-blue-600 dark:bg-blue-600/80 p-10 md:p-16 flex flex-col justify-center items-center text-center relative overflow-hidden backdrop-blur-md">
               {/* Decorative background circle */}
-              <div className="absolute top-0 right-0 -mt-16 -mr-16 w-64 h-64 bg-blue-500 dark:bg-blue-400 rounded-full mix-blend-multiply filter blur-2xl opacity-50 dark:opacity-30"></div>
+              <div className="absolute top-0 end-0 -mt-16 -me-16 w-64 h-64 bg-blue-500 dark:bg-blue-400 rounded-full mix-blend-multiply filter blur-2xl opacity-50 dark:opacity-30"></div>
               
               <div className="relative z-10">
                 <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-white/20">
                   <CalendarClock className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-2xl font-serif font-bold text-white mb-4">
-                  Schedule a Visit
+                  {t('scheduleAVisit')}
                 </h3>
                 <p className="text-blue-100 mb-8 max-w-xs mx-auto font-light">
-                  New patients are welcome. Book your consultation online for convenience.
+                  {t('scheduleText')}
                 </p>
                 <a 
                   href={bookingLink}
                   className="inline-block px-8 py-4 bg-white dark:bg-slate-900 text-blue-700 dark:text-blue-400 font-bold rounded-lg shadow-lg hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-105 transition-all duration-300"
                 >
-                  Book Appointment
+                  {t('bookAppointment')}
                 </a>
               </div>
             </div>
