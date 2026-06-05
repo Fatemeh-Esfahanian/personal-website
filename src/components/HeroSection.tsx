@@ -1,12 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { resumeData } from "../data/resume";
 import { ArrowDown, FileText } from "lucide-react";
 import Image from "next/image";
+import { useLanguage } from "./LanguageProvider";
 
 export default function HeroSection() {
-  const { name, title, tagline } = resumeData.personalInfo;
+  const { data, t } = useLanguage();
+  const { name, title, tagline } = data.personalInfo;
 
   return (
     <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[90vh] bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
@@ -37,7 +38,7 @@ export default function HeroSection() {
                 href="#experience"
                 className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-full text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 dark:hover:from-blue-500 dark:hover:to-indigo-500 shadow-md dark:shadow-[0_0_20px_rgba(79,70,229,0.4)] hover:shadow-lg dark:hover:shadow-[0_0_30px_rgba(79,70,229,0.6)] hover:-translate-y-1 transition-all duration-300"
               >
-                View Experience
+                {t('viewExperience')}
                 <ArrowDown className="ml-2 -mr-1 h-5 w-5 animate-bounce" aria-hidden="true" />
               </a>
               <a
@@ -46,7 +47,7 @@ export default function HeroSection() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 border border-slate-300 dark:border-white/20 text-lg font-medium rounded-full text-slate-700 dark:text-slate-200 bg-white/50 dark:bg-white/5 backdrop-blur-md hover:bg-slate-100 dark:hover:bg-white/10 hover:border-slate-400 dark:hover:border-white/40 shadow-sm dark:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
-                Download CV
+                {t('downloadCV')}
                 <FileText className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
               </a>
             </div>

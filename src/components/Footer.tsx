@@ -1,8 +1,11 @@
-import { resumeData } from "../data/resume";
+"use client";
+
+import { useLanguage } from "./LanguageProvider";
 
 export default function Footer() {
+  const { data, t } = useLanguage();
   const currentYear = new Date().getFullYear();
-  const { name, title } = resumeData.personalInfo;
+  const { name, title } = data.personalInfo;
 
   return (
     <footer className="bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-white/5 py-12 transition-colors duration-300">
@@ -12,12 +15,12 @@ export default function Footer() {
             {name}, {title}
           </span>
           <p className="text-slate-600 dark:text-slate-400 text-sm mt-2 transition-colors">
-            Providing compassionate clinical care.
+            {t('providingCare')}
           </p>
         </div>
         
         <div className="text-slate-500 dark:text-slate-500 text-sm transition-colors">
-          &copy; {currentYear} {name}. All rights reserved.
+          &copy; {currentYear} {name}. {t('allRightsReserved')}
         </div>
       </div>
     </footer>

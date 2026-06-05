@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { resumeData } from "../data/resume";
 import { GraduationCap, Award, BookOpenCheck } from "lucide-react";
+import { useLanguage } from "./LanguageProvider";
 
 export default function EducationSection() {
-  const { education, certifications, membershipsAndCourses } = resumeData as any;
+  const { data, t } = useLanguage();
+  const { education, certifications, membershipsAndCourses } = data as any;
 
   return (
     <section id="education" className="py-24 bg-white dark:bg-slate-950 transition-colors duration-300">
@@ -18,7 +19,7 @@ export default function EducationSection() {
             transition={{ duration: 0.6 }}
             className="text-sm font-semibold tracking-wide text-teal-600 dark:text-teal-400 uppercase"
           >
-            Academic
+            {t('academic')}
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -27,7 +28,7 @@ export default function EducationSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-2 text-3xl leading-8 font-serif font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl transition-colors"
           >
-            Education & Certifications
+            {t('educationAndCertifications')}
           </motion.p>
         </div>
 
@@ -39,7 +40,7 @@ export default function EducationSection() {
                 <div className="p-2 bg-teal-50 dark:bg-teal-900/30 rounded-lg transition-colors">
                   <GraduationCap className="h-6 w-6 text-teal-600 dark:text-teal-400" />
                 </div>
-                <h3 className="text-2xl font-serif font-bold text-slate-900 dark:text-white transition-colors">Education</h3>
+                <h3 className="text-2xl font-serif font-bold text-slate-900 dark:text-white transition-colors">{t('education')}</h3>
               </div>
               
               <div className="space-y-8">
@@ -71,7 +72,7 @@ export default function EducationSection() {
                   <div className="p-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg transition-colors">
                     <BookOpenCheck className="h-6 w-6 text-blue-600 dark:text-blue-400" />
                   </div>
-                  <h3 className="text-2xl font-serif font-bold text-slate-900 dark:text-white transition-colors">Memberships & Courses</h3>
+                  <h3 className="text-2xl font-serif font-bold text-slate-900 dark:text-white transition-colors">{t('membershipsAndCourses')}</h3>
                 </div>
                 
                 <div className="space-y-6">
@@ -106,7 +107,7 @@ export default function EducationSection() {
               <div className="p-2 bg-amber-50 dark:bg-amber-900/30 rounded-lg transition-colors">
                 <Award className="h-6 w-6 text-amber-600 dark:text-amber-400" />
               </div>
-              <h3 className="text-2xl font-serif font-bold text-slate-900 dark:text-white transition-colors">Certifications</h3>
+              <h3 className="text-2xl font-serif font-bold text-slate-900 dark:text-white transition-colors">{t('certifications')}</h3>
             </div>
             
             <div className="space-y-6">

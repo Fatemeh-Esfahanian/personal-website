@@ -1,4 +1,4 @@
-export const resumeData = {
+export const resumeDataEn = {
   personalInfo: {
     name: "Dr. Fatemeh Esfahanian",
     title: "M.D.",

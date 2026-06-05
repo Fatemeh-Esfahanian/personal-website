@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { resumeData } from "../data/resume";
 import { BookOpen, ExternalLink } from "lucide-react";
+import { useLanguage } from "./LanguageProvider";
 
 export default function PublicationsSection() {
-  const { publications } = resumeData;
+  const { data, t } = useLanguage();
+  const { publications } = data;
 
   if (!publications || publications.length === 0) return null;
 
@@ -20,7 +21,7 @@ export default function PublicationsSection() {
             transition={{ duration: 0.6 }}
             className="text-sm font-semibold tracking-wide text-indigo-600 dark:text-indigo-400 uppercase"
           >
-            Research
+            {t('research')}
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -29,7 +30,7 @@ export default function PublicationsSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-2 text-3xl leading-8 font-serif font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl transition-colors"
           >
-            Publications & Presentations
+            {t('publicationsAndPresentations')}
           </motion.p>
         </div>
 

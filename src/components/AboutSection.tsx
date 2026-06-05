@@ -1,27 +1,28 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { resumeData } from "../data/resume";
 import { HeartPulse, Stethoscope, Users } from "lucide-react";
+import { useLanguage } from "./LanguageProvider";
 
 export default function AboutSection() {
-  const { about } = resumeData.personalInfo;
+  const { data, t, lang } = useLanguage();
+  const { about } = data.personalInfo;
   
   const philosophyItems = [
     {
       icon: <Stethoscope className="h-6 w-6 text-blue-700" />,
-      title: "Evidence-Based",
-      desc: "Applying the latest medical research to clinical practice.",
+      title: lang === 'fa' ? "مبتنی بر شواهد" : "Evidence-Based",
+      desc: lang === 'fa' ? "به‌کارگیری جدیدترین تحقیقات پزشکی در عمل بالینی." : "Applying the latest medical research to clinical practice.",
     },
     {
       icon: <Users className="h-6 w-6 text-teal-600" />,
-      title: "Patient-Centered",
-      desc: "Prioritizing individual patient needs and shared decision-making.",
+      title: lang === 'fa' ? "بیمار محور" : "Patient-Centered",
+      desc: lang === 'fa' ? "اولویت دادن به نیازهای فردی بیمار و تصمیم‌گیری مشترک." : "Prioritizing individual patient needs and shared decision-making.",
     },
     {
       icon: <HeartPulse className="h-6 w-6 text-rose-500" />,
-      title: "Compassionate Care",
-      desc: "Treating every patient with dignity, empathy, and respect.",
+      title: lang === 'fa' ? "مراقبت دلسوزانه" : "Compassionate Care",
+      desc: lang === 'fa' ? "درمان هر بیمار با کرامت، همدلی و احترام." : "Treating every patient with dignity, empathy, and respect.",
     },
   ];
 
@@ -37,7 +38,7 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
             className="text-sm font-semibold tracking-widest text-blue-700 dark:text-emerald-400 uppercase"
           >
-            About Me
+            {t('aboutMe')}
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -46,7 +47,7 @@ export default function AboutSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-2 text-3xl leading-8 font-serif font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl transition-colors"
           >
-            Medical Philosophy & Background
+            {t('medicalPhilosophy')}
           </motion.p>
         </div>
 
@@ -63,9 +64,9 @@ export default function AboutSection() {
             </div>
             
             <div className="mt-10">
-              <h3 className="text-2xl font-serif font-bold text-slate-900 dark:text-white mb-6 transition-colors">Core Competencies & Skills</h3>
+              <h3 className="text-2xl font-serif font-bold text-slate-900 dark:text-white mb-6 transition-colors">{t('coreCompetencies')}</h3>
               <div className="flex flex-col gap-3">
-                {resumeData.skills.map((skill, index) => {
+                {data.skills.map((skill, index) => {
                   const parts = skill.split(':');
                   return (
                     <span 

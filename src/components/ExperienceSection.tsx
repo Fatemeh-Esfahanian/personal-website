@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { resumeData } from "../data/resume";
 import { Briefcase } from "lucide-react";
+import { useLanguage } from "./LanguageProvider";
 
 export default function ExperienceSection() {
-  const { experience } = resumeData;
+  const { data, t } = useLanguage();
+  const { experience } = data;
 
   return (
     <section id="experience" className="py-24 bg-slate-50 dark:bg-slate-900/50 transition-colors duration-300">
@@ -18,7 +19,7 @@ export default function ExperienceSection() {
             transition={{ duration: 0.6 }}
             className="text-sm font-semibold tracking-wide text-blue-700 dark:text-blue-400 uppercase"
           >
-            Career
+            {t('career')}
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -27,7 +28,7 @@ export default function ExperienceSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-2 text-3xl leading-8 font-serif font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl transition-colors"
           >
-            Clinical Experience
+            {t('clinicalExperience')}
           </motion.p>
         </div>
 
