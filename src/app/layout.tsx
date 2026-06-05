@@ -14,6 +14,8 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
+import { ThemeProvider } from "@/components/ThemeProvider";
+
 export const metadata: Metadata = {
   title: "Dr. Fatemeh, M.D. | Medical Portfolio",
   description: "Portfolio of Dr. Fatemeh, a dedicated physician focused on compassionate patient care and clinical excellence.",
@@ -28,9 +30,17 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${playfair.variable} scroll-smooth antialiased`}
+      suppressHydrationWarning
     >
-      <body className={`font-sans bg-slate-950 text-slate-50 min-h-screen flex flex-col`}>
-        {children}
+      <body className={`font-sans bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 min-h-screen flex flex-col transition-colors duration-300`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
