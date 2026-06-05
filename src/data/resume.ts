@@ -4,8 +4,8 @@ export const resumeData = {
     title: "M.D.",
     tagline: "General Physician and Medical Researcher",
     about: "Dr. Fatemeh Esfahanian is a Doctor of Medicine who graduated from Isfahan University of Medical Sciences with a strong background in both clinical practice and extensive medical research. She serves as a General Physician across multiple clinics in Tehran and Isfahan, and is a Global Burden of Disease Collaborator for the University of Washington. She is an active member of the Iranian Medical Association.",
-    email: "fatemeh.placeholder@example.com",
-    linkedin: "https://linkedin.com/in/placeholder",
+    email: "fatemeh.esfahanian@gmail.com",
+    linkedin: "https://www.linkedin.com/in/fatemeh-esfahanian-9b2a1b161/",
     clinicLocation: "Isfahan University of Medical Sciences, Ashrafi Esfahani Blvd, Punak Sq, Tehran, Iran",
     bookingLink: "#"
   },
